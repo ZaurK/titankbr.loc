@@ -26,6 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить продукт', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+	<div class="table-responsive">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -44,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
                   return $data->getCatName();
               },
               'filter' => Product::getCatsList()
-],
+            ],
 			/*
 			[
                 'attribute'=>'category.ctitle',
@@ -52,7 +53,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
 			*/
             //'pdescription:ntext',
-            'img_path',
+			'price',
+            //'img_path',
+			[
+            'label' => 'Фото',
+            'format' => 'raw',
+			'headerOptions' => ['width' => '200'],
+            'value' => function($data){
+                return Html::img('@frontendWebroot/uploads/images/' .$data->img_path, [
+                    'alt'=>'',
+                    'style' => 'width:100%;'
+                ]);
+            },
+			 'contentOptions'=>['style'=>''] 
+            ],
 
             [
             'class' => 'yii\grid\ActionColumn',
@@ -62,4 +76,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
+    </div>
 </div>

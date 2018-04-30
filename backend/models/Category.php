@@ -27,6 +27,7 @@ class Category extends \yii\db\ActiveRecord
     {
         return [
             [['ctitle'], 'required'],
+			[['cdescription'], 'string'],
             [['ctitle'], 'string', 'max' => 256],
         ];
     }
@@ -39,6 +40,7 @@ class Category extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'ctitle' => 'Название категории',
+			'cdescription' => 'Описание',
         ];
     }
 	

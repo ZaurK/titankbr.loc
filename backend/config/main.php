@@ -8,6 +8,8 @@ $params = array_merge(
 
 return [
     'id' => 'app-backend',
+	'name' => 'Страница администратора',
+	'defaultRoute' => 'product', 
 	'language' => 'ru-RU',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',

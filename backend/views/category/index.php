@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Добавить', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
+	<div class="table-responsive">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -31,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
             //'id',
             'ctitle',
+			//'cdescription:ntext',
 
 			[
             'class' => 'yii\grid\ActionColumn',
@@ -40,4 +42,5 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
         ],
     ]); ?>
+    </div>
 </div>

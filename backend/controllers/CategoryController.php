@@ -8,6 +8,7 @@ use backend\models\CategorySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * CategoryController implements the CRUD actions for Category model.
@@ -20,6 +21,21 @@ class CategoryController extends Controller
     public function behaviors()
     {
         return [
+		     'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => ['login', 'error'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['logout', 'index', 'update', 'view', 'create', 'delete'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+					
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -67,6 +83,7 @@ class CategoryController extends Controller
         $model = new Category();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			Yii::$app->session->setFlash('success', "Категория успешно добавлена");
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -87,6 +104,7 @@ class CategoryController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+			Yii::$app->session->setFlash('success', "Категория успешно обновлена");
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
@@ -105,7 +123,7 @@ class CategoryController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
+        Yii::$app->session->setFlash('success', "Категория успешно удалена");
         return $this->redirect(['index']);
     }
 

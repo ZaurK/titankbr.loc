@@ -72,6 +72,9 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+		$this->view->title = "Бумажные пакеты, упаковки, печать на пакетах | Титан, Нальчик, Кабардино-Балкария";
+        $this->view->registerMetaTag(['name'=>'keywords', 'content'=>'Бумажные пакеты, упаковки, печать на пакетах, Нальчик, Кабардино-Балкария']);
+        $this->view->registerMetaTag(['name'=>'description', 'content'=>'Бумажные пакеты, упаковки, печать на пакетах, Нальчик, Кабардино-Балкария']);
         return $this->render('index');
     }
 
@@ -140,9 +143,30 @@ class SiteController extends Controller
      */
     public function actionAbout()
     {
+		$this->layout = 'page_about';
         return $this->render('about');
     }
-
+	
+	 /**
+     * Displays delivery page.
+     *
+     * @return mixed
+     */
+    public function actionDelivery()
+    {
+		$this->layout = 'page_delivery';
+        return $this->render('delivery');
+    }
+ /**
+     * Displays contacts page.
+     *
+     * @return mixed
+     */
+    public function actionContacts()
+    {
+		$this->layout = 'page_contacts';
+        return $this->render('contacts');
+    }
     /**
      * Signs user up.
      *

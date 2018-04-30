@@ -22,12 +22,20 @@ use backend\models\Category;
     <?= $form->field($model, 'ptitle')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'pdescription')->textarea(['rows' => 6]) ?>
+	
+	<?= $form->field($model, 'price')->textInput(['maxlength' => true, 'value'=>'Цена в соответствии с прайсом']) ?>
 
-    <?= $form->field($model, 'img_path')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($uploadForm, 'imageFile')->fileInput()->label('Фото в формате .jpg, .jpeg, .png') ?>
+	<?php
+    if(isset($model->img_path) && file_exists(Yii::getAlias('@uploads', $model->img_path)))
+    { 
+        echo Html::img('@frontendWebroot/uploads/images/' . $model->img_path, ['style'=>'max-width:50%']);
+    } 
+    ?>
 	
 	
 
-    <div class="form-group">
+    <div class="form-group"><br>
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
     </div>
 

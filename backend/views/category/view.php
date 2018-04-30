@@ -12,6 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="category-view">
 
+
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
@@ -30,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'ctitle',
+			'cdescription:ntext',
         ],
     ]) ?>
 

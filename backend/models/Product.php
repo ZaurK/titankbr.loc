@@ -33,7 +33,7 @@ class Product extends \yii\db\ActiveRecord
             [['cat_id', 'ptitle'], 'required'],
             [['cat_id'], 'integer'],
             [['pdescription'], 'string'],
-            [['ptitle', 'img_path'], 'string', 'max' => 256],
+            [['ptitle', 'img_path', 'price'], 'string', 'max' => 256],
 			[['cat_id'], 'exist', 'skipOnError' => true, 'targetClass' => Category::className(), 'targetAttribute' => ['cat_id' => 'id']],
         ];
     }
@@ -48,7 +48,8 @@ class Product extends \yii\db\ActiveRecord
             'cat_id' => 'Категория',
             'ptitle' => 'Название продукции',
             'pdescription' => 'Описание продукции',
-            'img_path' => 'Img Path',
+			'price' =>'Цена',
+            'img_path' => 'Фото',
         ];
     }
 	
@@ -68,7 +69,7 @@ class Product extends \yii\db\ActiveRecord
 		->where(['id' => $this->cat_id])
         ->one();
 
-    return $cattitle ? $cattitle->ctitle : 'hhh';
+    return $cattitle ? $cattitle->ctitle : 'Категория не указана';
     }
 	
 	public static function getCatsList()

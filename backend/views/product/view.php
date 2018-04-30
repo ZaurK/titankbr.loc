@@ -36,7 +36,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'label'=>'Категория',                                
             ],
             'pdescription:ntext',
-            'img_path',
+			'price',
+			[
+            'label' => 'Фото',
+            'format' => 'raw',
+            'value' => function($data){
+                return Html::img('@frontendWebroot/uploads/images/' .$data->img_path, [
+                    'alt'=>'',
+                    'style' => 'width:50%;'
+                ]);
+            },
+			 'contentOptions'=>['style'=>'max-width: 200px;'] 
+            ],
         ],
     ]) ?>
 
