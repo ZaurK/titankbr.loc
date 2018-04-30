@@ -7,18 +7,13 @@ use yii\helpers\Html;
 
 class getProductOne
 {
-public static function getProduct()
+public static function getProduct($model)
 	{
 		
-		$query = Product::find()
-		->where(['id'=>$_GET['id']])
-        ->one();
-
-				
-			$ptitle = $query['ptitle'];
-			$pimg = $query['img_path'];
-            $price = $query['price'];				
-            $pdescription = $query['pdescription'];				
+			$ptitle = $model->ptitle;
+			$pimg = $model->img_path;
+            $price = $model->price;				
+            $pdescription = $model->pdescription;				
 			
 			echo \Yii::$app->view->render('@app/views/product/productone.php', ['ptitle'=>$ptitle, 'pimg'=>$pimg, 'pdescription'=>$pdescription, 'id'=>$id, 'price'=>$price,  'pages' => $pages]);
 					

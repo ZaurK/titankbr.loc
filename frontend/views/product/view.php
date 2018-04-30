@@ -5,6 +5,11 @@ use common\helpers\getCategoriesLinksSidebar;
 use common\helpers\getProductOne;	
 ?>
 <?php
+        $this->title = $model->ptitle;
+        $this->registerMetaTag(['name'=>'keywords', 'content'=>$model->ptitle]);
+        $this->registerMetaTag(['name'=>'description', 'content'=>$model->pdescription]);
+?>		
+<?php
 echo newerton\fancybox\FancyBox::widget([
     'target' => 'a[rel=fancybox]',
     'helpers' => true,
@@ -43,7 +48,7 @@ echo newerton\fancybox\FancyBox::widget([
             <div class="row">
                 <div class="col-md-12">
                     <div class="product-bit-title text-center">                 
-						<h2><?=$model->ctitle?></h2>
+						<h2><?=$model->ptitle?></h2>
                     </div>
                 </div>
             </div>
@@ -60,7 +65,7 @@ echo newerton\fancybox\FancyBox::widget([
 				</div>
 				<div class="col-md-9 col-sm-12">
 				    <ul class='category_list'>
-				        <?=getProductOne::getProduct()?>
+				        <?=getProductOne::getProduct($model)?>
 					</ul>				
 				</div>           
             </div>
