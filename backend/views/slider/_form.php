@@ -16,7 +16,7 @@ use yii\widgets\ActiveForm;
 	
     <?= $form->field($model, 'stext')->textarea(['rows' => 6])->label('Текст на слайде (максимум 3 строки - остальное обрежет, строки отличаются по цвету и размеру.)') ?>
 
-    <!--<?= $form->field($model, 'slink')->textInput(['maxlength' => true]) ?>-->
+    <?= $form->field($model, 'slink')->textInput(['maxlength' => true]) ?>
 	
 	<?= $form->field($uploadForm, 'imageFile')->fileInput()->label('Фото в формате .jpg, .jpeg, .png. Для нормального отображения загружайте картинки 1163px на 365px., изображение в любом случае будет подгоняться под такой размер.') ?>
 	<?php

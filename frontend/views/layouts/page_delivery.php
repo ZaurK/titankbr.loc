@@ -102,7 +102,7 @@ AppAsset::register($this);
                         <li><a href="<?= Url::toRoute(['site/index']); ?>"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a></li>
                         <li><a href="<?= Url::toRoute(['category/view', 'id' => 1]); ?>">Продукция</a></li>
                         <li class="active"><a href="<?= Url::toRoute(['site/delivery']); ?>">Доставка</a></li>
-                        <li><?= Html::a('Прайс-лист', ['uploads/files/' .$flink], ['title' => 'Скачать прайс-лист']) ?></li>
+                        <li><?= Html::a('Прайс-лист', ['uploads/files/' .$flink], ['title' => 'Скачать прайс-лист', 'id'=>'fileload']) ?></li>
                         <li><a href="<?= Url::toRoute(['site/about']); ?>">О нас</a></li>
                         <li><a href="<?= Url::toRoute(['site/contacts']); ?>">Контакты</a></li>
                     </ul>

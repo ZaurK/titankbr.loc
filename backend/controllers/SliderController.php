@@ -94,6 +94,7 @@ class SliderController extends Controller
                 $dir = Yii::getAlias('@uploads') . '/slides/';					
 				if ($uploadForm->upload($dir, null, 'slider')) {			
 				    $model->simg_path = $uploadForm->imageName;
+					//exit($model->simg_path);
 				    $model->save(false);
 					Yii::$app->session->setFlash('success', "Слайд успешно добавлен");
                     return $this->redirect(['view', 'id' => $model->id]);

@@ -20,7 +20,8 @@ public static function getLinks()
         $models = $query->offset($pages->offset)
         ->limit($pages->limit)
         ->all();
-				
+		
+echo "<ul class='category_list row-flex'>";
 	    foreach($models as $row){			
           
 			$ptitle = $row['ptitle'];
@@ -28,9 +29,10 @@ public static function getLinks()
             $price = $row['price'];	
             $id = $row['id'];			
 			
-			echo \Yii::$app->view->render('@app/views/product/productlink.php', ['ptitle'=>$ptitle, 'pimg'=>$pimg, 'id'=>$id, 'price'=>$price,  'pages' => $pages]);
-					
+			echo \Yii::$app->view->render('@app/views/product/productlink.php', ['ptitle'=>$ptitle, 'pimg'=>$pimg, 'id'=>$id, 'price'=>$price,  'pages' => $pages]);					
 	    }
+			echo "</ul>";
+			
 	echo "<div class='clearfix'></div>";
 	
 	echo ' <div class="row">

@@ -83,7 +83,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionLogin()
+/**    public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
@@ -100,19 +100,19 @@ class SiteController extends Controller
             ]);
         }
     }
-
+*/
     /**
      * Logs out the current user.
      *
      * @return mixed
      */
-    public function actionLogout()
+/**    public function actionLogout()
     {
         Yii::$app->user->logout();
 
         return $this->goHome();
     }
-
+*/
     /**
      * Displays contact page.
      *
@@ -172,7 +172,7 @@ class SiteController extends Controller
      *
      * @return mixed
      */
-    public function actionSignup()
+/**    public function actionSignup()
     {
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {
@@ -187,13 +187,13 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
+*/
     /**
      * Requests password reset.
      *
      * @return mixed
      */
-    public function actionRequestPasswordReset()
+/**    public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
@@ -210,7 +210,7 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
-
+*/
     /**
      * Resets password.
      *
@@ -218,7 +218,7 @@ class SiteController extends Controller
      * @return mixed
      * @throws BadRequestHttpException
      */
-    public function actionResetPassword($token)
+/**    public function actionResetPassword($token)
     {
         try {
             $model = new ResetPasswordForm($token);
@@ -236,4 +236,5 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+*/
 }

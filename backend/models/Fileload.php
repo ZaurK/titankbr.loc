@@ -16,10 +16,11 @@ class Fileload extends Model
 	public $maxSize = 1024*1024*2;
 	public $tooBig = 'Файл не должен превышать 2Мб';
 	
+	
     public function rules()
     {
         return [
-            [['loadFile'], 'file', 'skipOnEmpty' => false, 'extensions' => ['pdf', 'doc', 'docx', 'txt',  'xls', 'xlsx'], 'maxSize' => $this->maxSize, 'tooBig' => $this->tooBig],
+            [['loadFile'], 'file', 'skipOnEmpty' => false, checkExtensionByMimeType => false, 'extensions' => ['pdf', 'doc', 'docx', 'txt',  'xls', 'xlsx'], 'maxSize' => $this->maxSize, 'tooBig' => $this->tooBig],
         ];
     }
     

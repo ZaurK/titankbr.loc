@@ -29,12 +29,12 @@ use common\helpers\getProductItem;
                 <div class="col-md-3 col-sm-12">
 				<?=getCategoriesLinksSidebar::getLinks()?>
 				</div>
-				<div class="col-md-9 col-sm-12">
-				        
-				    <ul class='category_list row-flex'>
+				<div class="col-md-9 col-sm-12">   
+				    
 				        <?=getProductItem::getLinks()?>
-					</ul>
-                    <p style="text-align:justify"><?=nl2br($model->cdescription)?></p><br>					
+
+					
+                    <p style="text-align:justify"><?=nl2br($model->cdescription)?></p><br>				
 				</div>           
             </div>
         </div>

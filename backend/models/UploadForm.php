@@ -27,7 +27,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['imageFile'], 'file', 'skipOnEmpty' => false, 'extensions' => 'png, jpg, jpeg', 'maxSize' => $this->maxSize, 'tooBig' => $this->tooBig],
+            [['imageFile'], 'file', 'skipOnEmpty' => true, 'extensions' => 'png, jpg, jpeg', 'maxSize' => $this->maxSize, 'tooBig' => $this->tooBig],
         ];
     }
 	

@@ -2,6 +2,7 @@
 /* @var $this yii\web\View */
 use yii\helpers\Url;
 use yii\helpers\Html;	
+use common\helpers\getTranslit;
 ?>
 		
 <div class="col-md-4 col-sm-6 margin26">
@@ -14,7 +15,7 @@ use yii\helpers\Html;
                                     <div class="product-hover">                                      
 										<?php
 										echo '<a href="';			
-			                            echo Url::toRoute(['product/view', 'id' => $id]);                      			
+			                            echo Url::toRoute(['product/view', 'id' => $id, 'slug'=>getTranslit::translit($ptitle)]);                      			
 			                            echo '" , class="view-details-link"><i class="fa fa-link"></i>Подробнее</a>';
 										?>
                                     </div>

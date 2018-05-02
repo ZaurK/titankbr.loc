@@ -10,8 +10,8 @@ class ProductController extends \yii\web\Controller
 	   
     public function actionIndex()
     {
-		$model = Product::find()->where(['id'=>$_GET['id']])->one();
-        return $this->render('index', ['model'=>$model]);
+		//$model = Product::find()->where(['id'=>$_GET['id']])->one();
+        //return $this->render('index', ['model'=>$model]);
     }
 
    public function actionView($id)

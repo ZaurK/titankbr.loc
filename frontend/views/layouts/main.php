@@ -104,11 +104,11 @@ AppAsset::register($this);
                         <li class="active"><a href="<?= Url::toRoute(['site/index']); ?>"><i class="fa fa-home fa-lg" aria-hidden="true"></i></a></li>
                         <li><a href="<?= Url::toRoute(['category/view', 'id' => 1]); ?>">Продукция</a></li>
                         <li><a href="<?= Url::toRoute(['site/delivery']); ?>">Доставка</a></li>
-                        <li><?= Html::a('Прайс-лист', ['uploads/files/' .$flink], ['title' => 'Скачать прайс-лист']) ?></li>
+                        <li><?= Html::a('Прайс-лист', ['uploads/files/' .$flink], ['title' => 'Скачать прайс-лист', 'id'=>'fileload']) ?></li>
                         <li><a href="<?= Url::toRoute(['site/about']); ?>">О нас</a></li>
                         <li><a href="<?= Url::toRoute(['site/contacts']); ?>">Контакты</a></li>
                     </ul>
-                </div>  
+                </div>			
             </div>
         </div>
     </div> <!-- End mainmenu area -->
@@ -177,7 +177,7 @@ AppAsset::register($this);
             <div class="row">
                 <div class="col-md-12">
                     <div class="brand-wrapper">
-					 <h2 class="section-title">Клиенты</h2>
+					 <h2 class="section-title">Нам доверяют</h2>
                         <div class="brand-list">
                             <?= getCustomers::getLinks() ?>                         
                         </div><br>

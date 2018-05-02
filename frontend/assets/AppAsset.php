@@ -25,6 +25,7 @@ class AppAsset extends AssetBundle
 	    'js/main.js',
 	    'js/bxslider.min.js',
 	    'js/script.slider.js',
+	    'js/fileload.js',
     ];
     public $depends = [
         //'yii\web\YiiAsset',

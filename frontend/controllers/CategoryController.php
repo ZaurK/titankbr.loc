@@ -11,8 +11,8 @@ class CategoryController extends \yii\web\Controller
 	
     public function actionIndex()
     {
-		$model = Category::find()->where(['id'=>$_GET['id']])->one();
-        return $this->render('index', ['model'=>$model]);
+		//$model = Category::find()->where(['id'=>$_GET['id']])->one();
+        //return $this->render('index', ['model'=>$model]);
     }
 	
 	 /**
