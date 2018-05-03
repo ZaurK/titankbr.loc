@@ -11,6 +11,8 @@ return [
 	'name' => 'Страница администратора',
 	'defaultRoute' => 'product', 
 	'language' => 'ru-RU',
+	'sourceLanguage' => 'en-US',
+    'timeZone' => 'Europe/Moscow',
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
