@@ -176,8 +176,10 @@ class ProductController extends Controller
 		//удаляем файл, если он есть
 		$dir = Yii::getAlias('@uploads') . '/images/';	
 		$dir_thumb = Yii::getAlias('@uploads') . '/images/thumbs/';	
-        if($current_image!=='' && file_exists($dir .$current_image)) { 
+          if($current_image!=='' && file_exists($dir .$current_image)) { 
             unlink($dir .$current_image);
+        }
+		if($current_image!=='' && file_exists($dir_thumb .$current_image)) { 
 			unlink($dir_thumb.$current_image);
         }
         $this->findModel($id)->delete();
