@@ -24,7 +24,7 @@ use common\helpers\getTranslit;
                                 
 								<?php
 										echo '<h2><a href="';			
-			                            echo Url::toRoute(['product/view', 'id' => $id]);                      			
+			                            echo Url::toRoute(['product/view', 'id' => $id, 'slug'=>getTranslit::translit($ptitle)]);                      			
 			                            echo '">'.$ptitle.'</a></h2>';
 										?>
 								
